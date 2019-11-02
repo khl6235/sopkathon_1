@@ -32,5 +32,6 @@ module.exports = {
     LIST_CREATE_FAIL: "목록 생성 실패",
     REAL_TIME_SUCCESS: "실시간 급상승 게시물 검색 성공",
     RECENT_SORTING_SUCCESS: "최신순 게시물 검색 성공",
+    TOP10_SORTING_SUCCESS: "Top 10 게시물 검색 성공",
     INTERNAL_SERVER_ERROR: "서버 내부 오류"
 }

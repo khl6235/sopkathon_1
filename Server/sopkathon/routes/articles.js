@@ -46,6 +46,16 @@ router.get('/recent', (req, res) => {
     });
 });
 
+router.get('/top10', (req, res) => {
+    Article.topsort()
+    .then(({code, json}) => {
+        res.status(code).send(json);
+    }).catch(err => {
+        console.log(err);
+        res.status(statusCode.INTERNAL_SERVER_ERROR).send(authUtil.successFalse(responseMessage.INTERNAL_SERVER_ERROR));
+    });
+});
+
 router.get('/:category', (req, res)=>{
     const category = req.params.category;
     if(!category){
