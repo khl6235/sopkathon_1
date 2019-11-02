@@ -131,6 +131,19 @@ module.exports = {
         })
     },
 
+    recentsort:() =>{
+        return new Promise((resolve, reject) =>{
+                const rankingField = 'time';
+                articleDB.sort(function(a, b) { // 오름차순
+                    return b[rankingField] - a[rankingField];
+                });
+                resolve({
+                    code:statusCode.OK,
+                    json:authUtil.successTrue(responseMessage.RECENT_SORTING_SUCCESS, articleDB)
+                });
+        })
+    },
+
     readAll: () => {
         return new Promise((resolve, reject) => {
             //성공
