@@ -11,8 +11,7 @@ const User = require('../model/user');
 request body{
     "id":"아이디",
     "pwd":"비밀번호",
-    "name":"이름",
-    "address":"주소"
+    "name":"이름"
 }
 response
 1. 성공
@@ -21,10 +20,10 @@ response
 4. 서버 오류
 */
 router.post('/signup', (req, res) => {
-    const {id, pwd, name, address} = req.body;
+    const {id, pwd, name} = req.body;
     
     //파라미터 오류
-    if (!id || !pwd || !name || !address){
+    if (!id || !pwd || !name){
         res.status(statusCode.BAD_REQUEST).send(authUtil.successFalse(responseMessage.NULL_VALUE));
         return;
     }
@@ -49,7 +48,7 @@ router.post('/signup', (req, res) => {
     //회원가입 성공 
     res.status(statusCode.OK).send(authUtil.successTrue(responseMessage.SIGN_UP_SUCCESS, result));
     */
-    User.signup(id, pwd, name, address)
+    User.signup(id, pwd, name)
     .then(({code, json}) => {
         res.status(code).send(json);
     }).catch(err => {
@@ -103,5 +102,7 @@ router.post('/signin', (req, res) => {
         res.status(statusCode.INTERNAL_SERVER_ERROR).send(responseMessage.INTERNAL_SERVER_ERROR);
     });
 });
+
+
 
 module.exports = router;
