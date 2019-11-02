@@ -1,1 +1,1 @@
-# sopkathon_1
+# sopkathon 1조
