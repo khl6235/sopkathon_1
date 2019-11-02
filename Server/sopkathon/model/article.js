@@ -145,6 +145,19 @@ module.exports = {
         })
     },
 
+    topsort:() =>{
+        return new Promise((resolve, reject) =>{
+                const rankingField = 'likeNum';
+                articleDB.sort(function(a, b) { // 오름차순
+                    return b[rankingField] - a[rankingField];
+                });
+                resolve({
+                    code:statusCode.OK,
+                    json:authUtil.successTrue(responseMessage.TOP10_SORTING_SUCCESS, articleDB)
+                });
+        })
+    },
+
     readAll: () => {
         return new Promise((resolve, reject) => {
             //성공
