@@ -62,6 +62,16 @@ router.get('/:category', (req, res)=>{
     });
 });
 
+router.get('/top', (req, res) => {
+    Article.hot()
+    .then(({code, json}) => {
+        res.status(code).send(json);
+    }).catch(err => {
+        console.log(err);
+        res.status(statusCode.INTERNAL_SERVER_ERROR).send(authUtil.successFalse(responseMessage.INTERNAL_SERVER_ERROR));
+    });
+});
+
 router.put('/like', (req, res) =>{
     const {
         articleIdx

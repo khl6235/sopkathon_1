@@ -194,6 +194,20 @@ module.exports = {
                 json:authUtil.successTrue(responseMessage.ARTICLE_UPDATE_SUCCESS, articleDB[tmp])
             });
         })
+    },
+    hot:() =>{
+        return new Promise((resolve, reject) =>{
+
+                console.log(111);
+                const rankingField = 'likeNum';
+                articleDB.sort(function(a, b) { // 오름차순
+                    return b[rankingField] - a[rankingField];
+                });
+                resolve({
+                    code:statusCode.OK,
+                    json:authUtil.successTrue(responseMessage.RECENT_SORTING_SUCCESS, articleDB)
+                });
+        })
     }
 
 }
