@@ -30,5 +30,6 @@ module.exports = {
     LIST_READ_FAIL: "목록 조회 실패",
     LIST_CREATE_SUCCESS: "목록 생성 성공",
     LIST_CREATE_FAIL: "목록 생성 실패",
+    REAL_TIME_SUCCESS: "실시간 급상승 게시물 검색 성공",
     INTERNAL_SERVER_ERROR: "서버 내부 오류"
 }

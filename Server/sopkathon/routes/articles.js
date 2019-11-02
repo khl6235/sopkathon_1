@@ -6,10 +6,8 @@ const responseMessage = require('../module/responseMessage');
 const Article = require('../model/article');
 
 router.post('/writeArticle', (req, res) => {
-    const {category, articleIdx, userIdx, likeNum, photo, title} = req.body;
-    
-
-    Article.create(category, articleIdx, userIdx, likeNum, photo, title)
+    const {category, articleIdx, userIdx, likeNum, photo, title, time} = req.body;
+    Article.create(category, articleIdx, userIdx, likeNum, photo, title, time)
     .then(({code, json}) => {
         res.status(code).send(json);
     }).catch(err => {
@@ -20,6 +18,16 @@ router.post('/writeArticle', (req, res) => {
 
 router.get('/', (req, res) => {
     Article.readAll()
+    .then(({code, json}) => {
+        res.status(code).send(json);
+    }).catch(err => {
+        console.log(err);
+        res.status(statusCode.INTERNAL_SERVER_ERROR).send(authUtil.successFalse(responseMessage.INTERNAL_SERVER_ERROR));
+    });
+});
+
+router.get('/time', (req, res) => {
+    Article.timeCount()
     .then(({code, json}) => {
         res.status(code).send(json);
     }).catch(err => {
