@@ -3,11 +3,11 @@ const statusCode = require('../module/statusCode');
 const responseMessage = require('../module/responseMessage');
 
 const articleDB = [
-    {'category':'Joker', 'articleIdx':'1', 'userIdx':'', 'likeNum':'178', 'photo':'https://i2.wp.com/metro.co.uk/wp-content/uploads/2019/10/PRI_90103786.jpg?quality=90&strip=all&zoom=1&resize=644%2C362&ssl=1', 'title':'I\'m the best', 'time':200},
-    {'category':'Joker', 'articleIdx':'2', 'userIdx':'', 'likeNum':'15', 'photo':'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/06/06/10/jared-leto-joker.jpg', 'title':'WTF!!', 'time':670},
-    {'category':'Joker', 'articleIdx':'3', 'userIdx':'', 'likeNum':'145', 'photo':'https://i.ytimg.com/vi/votcOf5cYCM/maxresdefault.jpg', 'title':'Why so serious?', 'time':550},
-    {'category':'Joker', 'articleIdx':'4', 'userIdx':'', 'likeNum':'120', 'photo':'https://movies-b26f.kxcdn.com/wp-content/uploads/2019/10/batmanjokerburtonbanner.jpg', 'title':'I love ketchup!', 'time':300},
-    {'category':'Joker', 'articleIdx':'5', 'userIdx':'', 'likeNum':'95', 'photo':'https://i.pinimg.com/originals/46/57/4f/46574f036dffa8a296ff0fad7730a8f9.jpg', 'title':'Keep your eyes down', 'time':900}
+    {'category':'Joker', 'articleIdx':'1', 'userIdx':'', 'likeNum':178, 'photo':'https://i2.wp.com/metro.co.uk/wp-content/uploads/2019/10/PRI_90103786.jpg?quality=90&strip=all&zoom=1&resize=644%2C362&ssl=1', 'title':'I\'m the best', 'time':200},
+    {'category':'Joker', 'articleIdx':'2', 'userIdx':'', 'likeNum':15, 'photo':'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/06/06/10/jared-leto-joker.jpg', 'title':'WTF!!', 'time':670},
+    {'category':'Joker', 'articleIdx':'3', 'userIdx':'', 'likeNum':145, 'photo':'https://i.ytimg.com/vi/votcOf5cYCM/maxresdefault.jpg', 'title':'Why so serious?', 'time':550},
+    {'category':'Joker', 'articleIdx':'4', 'userIdx':'', 'likeNum':120, 'photo':'https://movies-b26f.kxcdn.com/wp-content/uploads/2019/10/batmanjokerburtonbanner.jpg', 'title':'I love ketchup!', 'time':300},
+    {'category':'Joker', 'articleIdx':'5', 'userIdx':'', 'likeNum':95, 'photo':'https://i.pinimg.com/originals/46/57/4f/46574f036dffa8a296ff0fad7730a8f9.jpg', 'title':'Keep your eyes down', 'time':900}
 ];
 const categoryDB = [
     {'category':'Joker', 'voteNum': 100},
@@ -115,7 +115,7 @@ module.exports = {
         return new Promise((resolve, reject) =>{
             const now = 1000; //new Date()로 받아서 실시간
             const _1hour = 500;
-            const timeTerm = now - _1hour;
+            const timeTerm = now - _1hour; //articleDB.time 이 500~1000 이면 1시간 이내
 
             const timeArray = articleDB.filter(it => it.time > timeTerm);
             if(timeArray.length != 0){
@@ -170,11 +170,14 @@ module.exports = {
                 return;
             }
 
-            articleDB[articleIdx].likeNum += 1;
+            const tmp = articleDB.findIndex(i => i.articleIdx== articleIdx); 
+            console.log(tmp);
+
+            articleDB[tmp].likeNum += 1;
             //성공
             resolve({
                 code:statusCode.OK,
-                json:authUtil.successTrue(responseMessage.ARTICLE_UPDATE_SUCCESS, articleDB)
+                json:authUtil.successTrue(responseMessage.ARTICLE_UPDATE_SUCCESS, articleDB[tmp])
             });
         })
     }
