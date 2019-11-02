@@ -3,8 +3,11 @@ const statusCode = require('../module/statusCode');
 const responseMessage = require('../module/responseMessage');
 
 const articleDB = [
-    {'category':'joker', 'articleIdx':'1', 'userIdx':'10', 'likeNum':'4', 'photo':'https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwia29yyjczlAhWT7WEKHSH1C2kQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.digitalspy.com%2Fmovies%2Fa29384592%2Fjoker-batman-twist-related-explained%2F&psig=AOvVaw2pMiQY2lQdooaBbZTfEV1n&ust=1572803939205593', 'title':'good'},
-    {'category':'horror', 'articleIdx':'2', 'userIdx':'20', 'likeNum':'8', 'photo':'', 'title':'comeon'}
+    {'category':'Joker', 'articleIdx':'1', 'userIdx':'', 'likeNum':'178', 'photo':'https://i2.wp.com/metro.co.uk/wp-content/uploads/2019/10/PRI_90103786.jpg?quality=90&strip=all&zoom=1&resize=644%2C362&ssl=1', 'title':'I\'m the best'},
+    {'category':'Joker', 'articleIdx':'2', 'userIdx':'', 'likeNum':'150', 'photo':'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/06/06/10/jared-leto-joker.jpg', 'title':'WTF!!'},
+    {'category':'Joker', 'articleIdx':'3', 'userIdx':'', 'likeNum':'145', 'photo':'https://i.ytimg.com/vi/votcOf5cYCM/maxresdefault.jpg', 'title':'Why so serious?'},
+    {'category':'Joker', 'articleIdx':'4', 'userIdx':'', 'likeNum':'120', 'photo':'https://movies-b26f.kxcdn.com/wp-content/uploads/2019/10/batmanjokerburtonbanner.jpg', 'title':'I love ketchup!'},
+    {'category':'Joker', 'articleIdx':'5', 'userIdx':'', 'likeNum':'95', 'photo':'https://i.pinimg.com/originals/46/57/4f/46574f036dffa8a296ff0fad7730a8f9.jpg', 'title':'Keep your eyes down'},
 ];
 const categoryDB = [
     {'category':'joker', 'voteNum': 100},
