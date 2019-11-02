@@ -7,6 +7,7 @@ module.exports = {
     SIGN_IN_SUCCESS: "로그인 성공",
     SIGN_IN_FAIL: "로그인 실패",
     ALREADY_ID: "존재하는 ID 입니다.",
+    ALREADY_ARTICLE: "존재하는 게시글입니다",
     NO_USER: "존재하지 않는 유저 id 입니다.",
     MISS_MATCH_PW: "비밀번호가 일치하지 않습니다",
 
@@ -22,7 +23,8 @@ module.exports = {
     ARTICLE_DELETE_FAIL: "게시글 삭제 실패",
     ALREADY_ID: "존재하는 ID 입니다.",
     NO_USER: "존재하지 않는 유저 입니다.",
-    NO_BOARD: "존재하지 않는 게시글 입니다.",
+    NO_CATEGORY: "존재하지 않는 카테고리 입니다.",
+    NO_ARTICLE: "존재하지 않는 게시물입니다.",
     MISS_MATCH_PW: "비밀번호가 일치하지 않습니다",
     LIST_READ_SUCCESS: "목록 조회 성공",
     LIST_READ_FAIL: "목록 조회 실패",
