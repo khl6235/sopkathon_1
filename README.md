@@ -1,1 +1,0 @@
-# sopkathon 1조
