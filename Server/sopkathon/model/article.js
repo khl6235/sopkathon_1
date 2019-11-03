@@ -3,11 +3,26 @@ const statusCode = require('../module/statusCode');
 const responseMessage = require('../module/responseMessage');
 
 const articleDB = [
+    {'category':'Joker', 'articleIdx':'1', 'userIdx':'', 'likeNum':632, 'photo':'https://static01.nyt.com/images/2019/10/09/arts/joker-anatomy2/joker-anatomy2-videoSixteenByNineJumbo1600.jpg', 'title':'i am the best', 'time':972},
+    {'category':'Pennywise', 'articleIdx':'2', 'userIdx':'', 'likeNum':534, 'photo':'https://i.ytimg.com/vi/Z5Mzj6veW74/maxresdefault.jpg', 'title':'ballon', 'time':872},
+    {'category':'Harley Quinn', 'articleIdx':'3', 'userIdx':'', 'likeNum':492, 'photo':'https://i.pinimg.com/originals/03/f5/16/03f516d45af86cb229f03e8a6a46fb1b.jpg', 'title':'where r u Joker?', 'time':962},
+    {'category':'Thanos', 'articleIdx':'4', 'userIdx':'', 'likeNum':420, 'photo':'https://extmovie.maxmovie.com/xe/files/attach/images/135/630/790/036/ca0f915cc6a14e3c099a2e3bcd019b62.JPG', 'title':'one punch three tooth', 'time':832},
+    {'category':'Hulk', 'articleIdx':'5', 'userIdx':'', 'likeNum':393, 'photo':'http://static4.businessinsider.com/image/50926a6569bedd892b000011-577-1024/the-rock-as-hulk.jpg', 'title':'bring me protein!', 'time':723},
+    {'category':'Batman', 'articleIdx':'6', 'userIdx':'', 'likeNum':34, 'photo':'https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_876/http://escapematter.com/wp-content/uploads/2018/12/b11.jpg', 'title':'Dark Night', 'time':123},
+    {'category':'Spiderman', 'articleIdx':'7', 'userIdx':'', 'likeNum':24, 'photo':'https://i.pinimg.com/originals/d3/38/e5/d338e5c067226ab70bc2d83adacc946d.jpg', 'title':'oops!', 'time':152},
+    {'category':'Wally', 'articleIdx':'8', 'userIdx':'', 'likeNum':20, 'photo':'https://upload.wikimedia.org/wikipedia/commons/f/f7/Where%27s_Waldo%3F_Costume.jpg', 'title':'Where r u?', 'time':190},
+    {'category':'Joker', 'articleIdx':'9', 'userIdx':'', 'likeNum':334, 'photo':'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/06/06/10/jared-leto-joker.jpg', 'title':'WTF!!', 'time':690},
+    {'category':'Joker', 'articleIdx':'10', 'userIdx':'', 'likeNum':210, 'photo':'https://i.ytimg.com/vi/votcOf5cYCM/maxresdefault.jpg', 'title':'Why so serious?', 'time':540},
+    {'category':'Joker', 'articleIdx':'11', 'userIdx':'', 'likeNum':152, 'photo':'https://movies-b26f.kxcdn.com/wp-content/uploads/2019/10/batmanjokerburtonbanner.jpg', 'title':'I love ketchup!', 'time':510},
+    {'category':'Joker', 'articleIdx':'12', 'userIdx':'', 'likeNum':89, 'photo':'https://i.pinimg.com/originals/46/57/4f/46574f036dffa8a296ff0fad7730a8f9.jpg', 'title':'Keep your eyes down', 'time':340},
+    {'category':'Joker', 'articleIdx':'13', 'userIdx':'', 'likeNum':81, 'photo':'https://i.etsystatic.com/19153072/r/il/ec95b3/1962989878/il_794xN.1962989878_87mf.jpg', 'title':'nice chin', 'time':310}
+    /*
     {'category':'Joker', 'articleIdx':'1', 'userIdx':'', 'likeNum':632, 'photo':'https://static01.nyt.com/images/2019/10/09/arts/joker-anatomy2/joker-anatomy2-videoSixteenByNineJumbo1600.jpg', 'title':'I\'m the best', 'time':200},
     {'category':'Joker', 'articleIdx':'2', 'userIdx':'', 'likeNum':334, 'photo':'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/06/06/10/jared-leto-joker.jpg', 'title':'WTF!!', 'time':670},
     {'category':'Joker', 'articleIdx':'3', 'userIdx':'', 'likeNum':210, 'photo':'https://i.ytimg.com/vi/votcOf5cYCM/maxresdefault.jpg', 'title':'Why so serious?', 'time':550},
     {'category':'Joker', 'articleIdx':'4', 'userIdx':'', 'likeNum':152, 'photo':'https://movies-b26f.kxcdn.com/wp-content/uploads/2019/10/batmanjokerburtonbanner.jpg', 'title':'I love ketchup!', 'time':300},
     {'category':'Joker', 'articleIdx':'5', 'userIdx':'', 'likeNum':89, 'photo':'https://i.pinimg.com/originals/46/57/4f/46574f036dffa8a296ff0fad7730a8f9.jpg', 'title':'Keep your eyes down', 'time':900}
+    */
 ];
 
 const categoryDB = [
